@@ -29,7 +29,7 @@ def predict():
 
 @app.route("/")
 def index():
-    return render_template("Wine-o-meter_API_index.html")
+    return render_template("flaskapi-project.html")
     
 
 if __name__ == "__main__":
