@@ -29,7 +29,7 @@ def predict():
 
 @app.route("/")
 def index():
-    return render_template("templates/flaskapi-project2.html")
+    return render_template("templates/flaskapi-project.html")
     
 
 if __name__ == "__main__":
