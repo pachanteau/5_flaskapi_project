@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://wine-o-meter.herokuapp.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Win-o-meter API</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Add the following line to style your pages with your own CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">
+</head>
+
+<body>
+  
+<div class="container">
+  <h1>The win-o-meter API</h1>
+  <p>Welcome to the win-o-meter API.</p>
+  <h2>Endpoints</h2>
+  <div>
+    <ul>
+      <li class="endpoint">
+        <code>/predict</code>, method POST
+        <p>
+          Predict the quality of the wine with a score from 0 to 10 based on physicochemical samples.
+        </p>
+        <p>
+          The expected input is a JSON with an <code>input</code> key followed by an array of inputs. Each inputs is an
+          array of samples in the following order:
+        </p><ol>
+          <li>fixed acidity</li>
+          <li>volatile acidity</li>
+          <li>citric acid</li>
+          <li>residual sugar</li>
+          <li>chlorides</li>
+          <li>free sulfur dioxide</li>
+          <li>total sulfur dioxide</li>
+          <li>density</li>
+          <li>pH</li>
+          <li>sulphates</li>
+          <li>alcohol</li>
+        </ol>
+        <p></p>
+        <p>
+          JSON input example:
+          </p><pre>            <code>
+        {
+          "input": [[7.0, 0.27, 0.36, 20.7, 0.045, 45.0, 170.0, 1.001, 3.0, 0.45, 8.8]]
+        }
+            </code>
+          </pre>
+        <p></p>
+        <p>
+          Request example using <code>curl</code>:
+          </p><pre>            <code>
+        curl -i -H "Content-Type: application/json" -X POST -d '{"input": [[7.0, 0.27, 0.36, 20.7, 0.045, 45.0, 170.0, 1.001, 3.0, 0.45, 8.8], [7.0, 0.27, 0.36, 20.7, 0.045, 45.0, 170.0, 1.001, 3.0, 0.45, 8.8]]}' https://wine-o-meter.herokuapp.com/predict
+            </code>
+          </pre>
+        <p></p>
+        <p>
+          Expected output:
+          </p><pre>            <code>
+        {
+          "prediction": [6, 6]
+        }
+            </code>
+          </pre>
+        <p></p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+</body></html>
+
+{% endblock %}
