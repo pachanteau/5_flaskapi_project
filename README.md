@@ -9,7 +9,7 @@ Wine-o-meter is a future unicorn application. It allows wine producers to predic
 
 
 ## Project 🚧
-The data-science team has worked together on creating the best model predicting the quality score (from 0 to 10) of multiple wines. The next step is to include this model into the mobile application. The development team is expecting an API endpoint in order to request the model and display the result inside the application.
+The data science team has worked together on creating the best model predicting the quality score (from 0 to 10) of multiple wines. The next step is to include this model into the mobile application. The development team is expecting an API endpoint in order to request the model and display the result inside the application.
 
 Your job is to put the trained model into production. Hopefully, the team provided you their work:
 
